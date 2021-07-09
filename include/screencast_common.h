@@ -63,6 +63,12 @@ struct xdpw_frame_crop {
 	uint32_t height;
 };
 
+enum xdpw_cropmode {
+	XDPW_CROP_NONE,
+	XDPW_CROP_WLROOTS,
+	XDPW_CROP_PIPEWIRE,
+};
+
 struct xdpw_frame {
 	bool y_invert;
 	uint64_t tv_sec;
@@ -150,6 +156,7 @@ struct xdpw_screencast_instance {
 	enum xdpw_frame_state frame_state;
 	struct wl_list buffer_list;
 	bool avoid_dmabufs;
+	enum xdpw_cropmode cropmode;
 
 	// pipewire
 	struct pw_stream *stream;
