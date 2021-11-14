@@ -404,3 +404,16 @@ const char *chooser_type_str(enum xdpw_chooser_types chooser_type) {
 	fprintf(stderr, "Could not find chooser type %d\n", chooser_type);
 	abort();
 }
+
+const char *cropmode_str(enum xdpw_cropmode cropmode) {
+	switch (cropmode) {
+	case XDPW_CROP_NONE:
+		return "none";
+	case XDPW_CROP_WLROOTS:
+		return "wlroots";
+	case XDPW_CROP_PIPEWIRE:
+		return "pipewire";
+	}
+	fprintf(stderr, "Could not find chooser type %d\n", cropmode);
+	abort();
+}
